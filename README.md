@@ -1,22 +1,54 @@
-# Arm Language Server
+# ArmLS (preview)
 
-A language server that provides language support for AArch64 assembly.
+ArmLS is a language server for AArch64 assembly that offers a collection of modern code editor features such as in-editor diagnostics and on-hover documentation. It has builtin knowledge of the latest version of the architecture (v9.6) and implements the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/), making it compatible with many [code editors](https://langserver.org/#implementations-client).
 
-## Features
+## Key features
 
-- Hover support for instructions and operands
-- Semantic highlighting
-- Completion sourced from mnemonics, labels, set directives and macros
-- Real-time diagnostics with customizable configuration and support for `clang`
-- Document symbols (go to definition, document symbols, etc)
+ArmLS currently implements the following LSP functionality.
+
+
+### Hover
+
+ArmLS can provide information about instruction mnemonics and their operands on hover.
+
+
+
+### Diagnostics
+
+ArmLS offers real-time diagnostics support, either through its own internal diagnostics engine or through error mapping from a specific `clang`-based binary.
+
+
+### Completion
+
+ArmLS provides completion suggestions for items like mnemonics, macros, and labels based on the cursor position.
+
+
+### Document symbols and goto definition
+
+ArmLS detects and provides a list of useful symbols to your editor, and supports jumping to definitions.
+
+
+### Semantic highlighting
+
+You can configure ArmLS to provide semantic highlighting to clients that support it,
+providing batteries-included syntax highlighting that can intelligently differentiate between symbol types.
+
 
 ## Usage
 
-### Vscode extension
+ArmLS should be compatible with any LSP-compliant client, but has been explicitly tested in the following use cases.
 
-Follow [vscode-armls](https://github.com/Arm/vscode-armls) readme.
 
-### Neovim using `lspconfig`
+### VS Code
+
+ArmLS has a VS Code extension ([vscode-armls](https://github.com/arm/vscode-armls)) that you can download from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/vscode) or the [Open VSX Registry](https://open-vsx.org/).
+
+
+### Neovim
+
+The following examples use [lspconfig](https://github.com/neovim/nvim-lspconfig).
+
+#### Configuration
 
 <details open>
 <summary>Simple setup</summary>
@@ -27,7 +59,7 @@ local configs = require("lspconfig.configs")
 
 configs.armls = {
     default_config = {
-        cmd = { "<path-to-armls-exe>" },
+        cmd = { "<path-to-armls-binary>" },
         root_dir = lspconfig.util.root_pattern(".git"),
         filetypes = { "asm" },
     },
@@ -39,7 +71,7 @@ configs.armls.setup({})
 </details>
 
 <details>
-<summary>(default) Granular internal diagnostics configuration</summary>
+<summary>Granular internal diagnostics configuration (default settings)</summary>
 
 ```lua
 configs.armls.setup({
@@ -61,7 +93,7 @@ configs.armls.setup({
 </details>
 
 <details>
-    <summary>(default) External diagnostics configuration</summary>
+    <summary>External diagnostics configuration (default settings)</summary>
 
 ```lua
 configs.armls.setup({
@@ -79,3 +111,29 @@ configs.armls.setup({
 ```
 
 </details>
+
+##### Semantic highlighting
+
+To disable semantic highlighting in Neovim, [delete the `semanticTokensProvider` property in the `armls` language server configuration](https://lsp-zero.netlify.app/docs/language-server-configuration.html#disable-semantic-highlights).
+
+##### Diagnostics
+
+To configure whether ArmLS provides validation diagnostics in Neovim, modify the `enableDiagnostics` server setting.
+
+
+## Current limitations
+
+ArmLS is in preview and has the current limitations:
+
+- ArmLS does not support cross-file references
+- ArmLS does not support C/C++ pre-processor syntax
+- The internal diagnostics engine is alpha quality and might display false positives. We recommend that you use `clang`-powered diagnostics at this time.
+
+
+## Contact
+
+To report bugs or request enhancements, use GitHub [issues](https://github.com/arm/armls/issues).
+
+## Related resources
+
+- [Learn more about AArch64](https://developer.arm.com/documentation/102374/0102/Overview)
