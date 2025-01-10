@@ -15,7 +15,7 @@ ArmLS can provide information about instruction mnemonics and their operands on 
 
 ### Diagnostics
 
-ArmLS offers real-time diagnostics support, either through its own internal diagnostics engine or through error mapping from a specific `clang`-based binary.
+ArmLS offers real-time diagnostics support, either through its own internal diagnostics engine or through error mapping from a specified `clang` binary.
 
 
 ### Completion
