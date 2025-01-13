@@ -1,0 +1,10 @@
+===============================================================================
+This file contains details of any applicable specific extensions, limitations
+or other variations to the terms of the End User License Agreement that
+accompanies this release of 'ArmLS'.
+===============================================================================
+
+There are no 'Supplementary Terms' applicable to this release of
+'ArmLS'.
+
+----------------------------------------------------------------------
