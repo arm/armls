@@ -1,0 +1,11 @@
+===============================================================================
+This file lists the portions of this release of 'ArmLS' that
+you are permitted to redistribute and any terms and conditions applicable to
+such redistribution. Refer to the End User License Agreement that accompanies
+this release of 'ArmLS' for terms and conditions relating to
+permitted redistribution and 'Redistributables'. Any modification or
+redistribution of files covered by open-source licenses, whether listed here
+or not, is subject to the terms of the applicable open-source license.
+===============================================================================
+--- BLANK ---
+---------------------------------------------------------------------
