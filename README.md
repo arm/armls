@@ -120,6 +120,14 @@ To disable semantic highlighting in Neovim, [delete the `semanticTokensProvider`
 
 To configure whether ArmLS provides validation diagnostics in Neovim, modify the `enableDiagnostics` server setting.
 
+## Compatibility
+
+ArmLS has been tested against the following versions of each major operating system:
+
+- MacOS Sequoia
+- Ubuntu 24.04
+- Windows 11
+
 
 ## Current limitations
 
