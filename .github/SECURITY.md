@@ -1,0 +1,81 @@
+**Reporting vulnerabilities**
+
+Arm takes security issues seriously and welcomes feedback from researchers and
+the security community in order to improve the security of its products and
+services. We operate a coordinated disclosure policy for disclosing
+vulnerabilities and other security issues.
+
+Security issues can be complex and one single timescale doesn't fit all
+circumstances. We will make best endeavours to inform you when we expect
+security notifications and fixes to be available and facilitate coordinated
+disclosure when notifications and patches/mitigations are available.
+
+**Report**
+
+For all security issues, contact Arm by email at [psirt@arm.com](mailto:psirt@arm.com).
+
+
+**Secure submission using PGP**
+
+We support and encourage secure submission of vulnerability reports using PGP,
+using the key below. If you would like replies to be encrypted, please provide
+your own public key through a secure mechanism.
+
+```
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Comment: CB33 9CE6 994B C71F 2430  9E59 6223 980B 410D E67E
+Comment: Arm PSIRT <psirt@arm.com>
+
+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
+9g==
+=tP9E
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
+For more information visit https://developer.arm.com/support/arm-security-updates/report-security-vulnerabilities
