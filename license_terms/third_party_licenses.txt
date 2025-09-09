@@ -1,16 +1,16 @@
 # Dependencies
- - clap 4.5.41
+ - clap 4.5.47
  - streaming-iterator 0.1.9
  - itertools 0.14.0
- - regex 1.11.1
+ - regex 1.11.2
  - strip-ansi-escapes 0.2.1
- - lsp-server 0.7.8
+ - lsp-server 0.7.9
  - serde 1.0.219
- - serde_json 1.0.140
- - tracing-subscriber 0.3.19
+ - serde_json 1.0.143
+ - tracing-subscriber 0.3.20
  - tracing 0.1.41
- - tree-sitter 0.25.6
- - phf 0.12.1
+ - tree-sitter 0.25.9
+ - phf 0.13.1
  - lsp-types 0.97.0
 
 # Licenses
@@ -18,7 +18,7 @@
 ## Apache License 2.0
 
 ### Used by:
- - clap 4.5.41
+ - clap 4.5.47
  - streaming-iterator 0.1.9
 
 ### License Text:
@@ -232,7 +232,7 @@
 
 ### Used by:
  - itertools 0.14.0
- - regex 1.11.1
+ - regex 1.11.2
  - strip-ansi-escapes 0.2.1
 
 ### License Text:
@@ -444,9 +444,9 @@ limitations under the License.
 ## Apache License 2.0
 
 ### Used by:
- - lsp-server 0.7.8
+ - lsp-server 0.7.9
  - serde 1.0.219
- - serde_json 1.0.140
+ - serde_json 1.0.143
 
 ### License Text:
 
@@ -529,7 +529,7 @@ limitations under the License.
 ## MIT License
 
 ### Used by:
- - tracing-subscriber 0.3.19
+ - tracing-subscriber 0.3.20
  - tracing 0.1.41
 
 ### License Text:
@@ -565,7 +565,7 @@ DEALINGS IN THE SOFTWARE.
 ## MIT License
 
 ### Used by:
- - tree-sitter 0.25.6
+ - tree-sitter 0.25.9
 
 ### License Text:
 
@@ -584,7 +584,7 @@ THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRES
 ## MIT License
 
 ### Used by:
- - phf 0.12.1
+ - phf 0.13.1
 
 ### License Text:
 
