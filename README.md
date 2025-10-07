@@ -46,79 +46,80 @@ ArmLS has a VS Code extension ([vscode-armls](https://github.com/arm/vscode-arml
 
 ### Neovim
 
-The following examples use [lspconfig](https://github.com/neovim/nvim-lspconfig).
-
 #### Configuration
 
 <details open>
-<summary>Simple setup</summary>
+<summary>Simple setup (default config)</summary>
 
 ```lua
-local lspconfig = require("lspconfig")
-local configs = require("lspconfig.configs")
-
-configs.armls = {
-    default_config = {
-        cmd = { "<path-to-armls-binary>" },
-        root_dir = lspconfig.util.root_pattern(".git"),
-        filetypes = { "asm" },
+local config = {
+    cmd = { "<path-to-armls-binary>" },
+    filetypes = { "asm" },
+    settings = {
+        armls = {
+            diagnostics = {
+                enable = true,
+                disableCategories = {
+                    "invalidOperand",
+                    "tooManyOperands",
+                    "tooFewOperands",
+                },
+            },
+        },
     },
 }
-
-configs.armls.setup({})
+vim.lsp.config("armls", config)
+vim.lsp.enable("armls")
 ```
 
 </details>
 
 <details>
-<summary>Granular internal diagnostics configuration (default settings)</summary>
+<summary>Granular internal diagnostics configuration</summary>
 
 ```lua
-configs.armls.setup({
+local config = {
     settings = {
         armls = {
             diagnostics = {
                 enable = true,
                 disableCategories = {
                     -- "unrecognisedInstruction",
-                    "invalidOperand",
-                    "tooManyOperands",
-                    "tooFewOperands",
+                    -- "invalidOperand",
+                    -- "tooManyOperands",
+                    -- "tooFewOperands",
                 },
+            },
         },
     },
-})
+}
 ```
 
 </details>
 
 <details>
-    <summary>External diagnostics configuration (default settings)</summary>
+<summary>External diagnostics configuration</summary>
 
 ```lua
-configs.armls.setup({
+local config = {
     settings = {
         armls = {
-            -- externalDiagnostics = {
-            --     clang = {
-            --         path = "/path/to/clang-executable",
-            --         args = { "--target=aarch64" },
-            --     },
-            -- },
+            externalDiagnostics = {
+                clang = {
+                    path = "/path/to/clang-executable",
+                    args = { "--target=aarch64" },
+                },
+            },
         },
     },
-})
+}
 ```
 
 </details>
 
-##### Semantic highlighting
+#### Semantic highlighting
 
 To disable semantic highlighting in Neovim, [delete the `semanticTokensProvider` property in the `armls` language server configuration](https://lsp-zero.netlify.app/docs/language-server-configuration.html#disable-semantic-highlights).
-
-##### Diagnostics
-
-To configure whether ArmLS provides validation diagnostics in Neovim, modify the `enableDiagnostics` server setting.
 
 ## Compatibility
 
