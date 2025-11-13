@@ -1,6 +1,6 @@
 # ArmLS (preview)
 
-ArmLS is a language server for AArch64 assembly that offers a collection of modern code editor features such as in-editor diagnostics and on-hover documentation. It has builtin knowledge of the latest version of the architecture (v9.6) and implements the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/), making it compatible with many [code editors](https://langserver.org/#implementations-client).
+ArmLS is a language server for Arm Assembly that offers a collection of modern code editor features such as in-editor diagnostics and on-hover documentation. It has builtin knowledge of the latest version of the architecture (v9.6) and implements the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/), making it compatible with many [code editors](https://langserver.org/#implementations-client).
 
 ## Key features
 
@@ -108,8 +108,24 @@ local config = {
                 clang = {
                     path = "/path/to/clang-executable",
                     args = { "--target=aarch64" },
+                    -- Or "--target=arm" if using A32.
                 },
             },
+        },
+    },
+}
+```
+
+</details>
+
+<details>
+<summary>A32 support</summary>
+
+```lua
+local config = {
+    settings = {
+        armls = {
+        	defaultArchitecture = "A32",
         },
     },
 }
@@ -137,6 +153,7 @@ ArmLS is in preview and has the current limitations:
 - ArmLS does not support cross-file references
 - ArmLS does not support C/C++ pre-processor syntax
 - The internal diagnostics engine is alpha quality and might display false positives. We recommend that you use `clang`-powered diagnostics at this time.
+- A32 only supports [Unified Assembler Language][ual] ([`.syntax unified`][gcc_ual])
 
 
 ## Contact
@@ -146,3 +163,6 @@ To report bugs or request enhancements, use GitHub [issues](https://github.com/a
 ## Related resources
 
 - [Learn more about AArch64](https://developer.arm.com/documentation/102374/0102/Overview)
+
+[ual]: https://developer.arm.com/documentation/101754/0624/armasm-Legacy-Assembler-Reference/Writing-A32-T32-Instructions-in-armasm-Syntax-Assembly-Language/About-the-Unified-Assembler-Language
+[gcc_ual]: https://sourceware.org/binutils/docs-2.45/as/ARM_002dInstruction_002dSet.html

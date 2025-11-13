@@ -1,8 +1,8 @@
 # Dependencies
- - clap 4.5.47
+ - clap 4.5.50
  - streaming-iterator 0.1.9
  - itertools 0.14.0
- - regex 1.11.3
+ - regex 1.12.1
  - strip-ansi-escapes 0.2.1
  - lsp-server 0.7.9
  - serde 1.0.228
@@ -18,7 +18,7 @@
 ## Apache License 2.0
 
 ### Used by:
- - clap 4.5.47
+ - clap 4.5.50
  - streaming-iterator 0.1.9
 
 ### License Text:
@@ -232,7 +232,7 @@
 
 ### Used by:
  - itertools 0.14.0
- - regex 1.11.3
+ - regex 1.12.1
  - strip-ansi-escapes 0.2.1
 
 ### License Text:
