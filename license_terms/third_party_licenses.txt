@@ -1,5 +1,5 @@
 # Dependencies
- - clap 4.5.50
+ - clap 4.5.53
  - streaming-iterator 0.1.9
  - itertools 0.14.0
  - regex 1.12.1
@@ -18,7 +18,7 @@
 ## Apache License 2.0
 
 ### Used by:
- - clap 4.5.50
+ - clap 4.5.53
  - streaming-iterator 0.1.9
 
 ### License Text:
