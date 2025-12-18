@@ -1,6 +1,6 @@
 # ArmLS (preview)
 
-ArmLS is a language server for Arm Assembly that offers a collection of modern code editor features such as in-editor diagnostics and on-hover documentation. It has builtin knowledge of the latest version of the architecture (v9.6) and implements the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/), making it compatible with many [code editors](https://langserver.org/#implementations-client).
+ArmLS is a language server for Arm Assembly that offers a collection of modern code editor features such as in-editor diagnostics and on-hover documentation. It has builtin knowledge of the latest version of the architecture (Armv9.7-A) and implements the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/), making it compatible with many [code editors](https://langserver.org/#implementations-client).
 
 ## Key features
 

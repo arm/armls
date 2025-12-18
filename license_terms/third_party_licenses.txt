@@ -2,13 +2,13 @@
  - clap 4.5.53
  - streaming-iterator 0.1.9
  - itertools 0.14.0
- - regex 1.12.1
+ - regex 1.12.2
  - strip-ansi-escapes 0.2.1
  - lsp-server 0.7.9
  - serde 1.0.228
  - serde_json 1.0.145
- - tracing-subscriber 0.3.20
- - tracing 0.1.41
+ - tracing-subscriber 0.3.22
+ - tracing 0.1.43
  - tree-sitter 0.25.10
  - phf 0.13.1
  - lsp-types 0.97.0
@@ -232,7 +232,7 @@
 
 ### Used by:
  - itertools 0.14.0
- - regex 1.12.1
+ - regex 1.12.2
  - strip-ansi-escapes 0.2.1
 
 ### License Text:
@@ -529,8 +529,8 @@ limitations under the License.
 ## MIT License
 
 ### Used by:
- - tracing-subscriber 0.3.20
- - tracing 0.1.41
+ - tracing-subscriber 0.3.22
+ - tracing 0.1.43
 
 ### License Text:
 
